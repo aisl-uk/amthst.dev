@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    {%- if page.render_title -%}
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {%- endif -%}
+  </header>
+
+  <div>
+    {%- if page.toc -%}
+    <div class="table-of-contents">
+      {{ content | toc_only }}
+    </div>
+    <br /><hr /><br />
+    {%- endif -%}
+    <div class="post-content">
+      {{ content | inject_anchors }}
+    </div>
+  </div>
+
+</article>
